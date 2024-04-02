@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: express-typescript/Dockerfile.dev
+    # environment keys below are read by application code of container
+    # e.g. src/index.ts
+    #   console.log('PORT',process.env.PORT)
+    #   will show 8081
+    environment:
+      - PORT=8081
+    volumes:
+      - ./express-typescript/src:/usr/src/appparent/app/src
+    ports:
+      - "3030:8081"

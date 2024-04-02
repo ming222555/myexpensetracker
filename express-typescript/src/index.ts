@@ -7,7 +7,8 @@ import { Greetings } from "../../shared";
 dotenv.config();
 
 const PORT = process.env.PORT || 8000;
-console.log('motm motm motm',process.env.MOTM)
+console.log('MOTM',process.env.MOTM)
+console.log('PORT',process.env.PORT)
 const app: Application = express();
 
 app.get("/ping", async (_req, res) => {
