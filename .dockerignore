@@ -1,0 +1,8 @@
+**/node_modules
+**/misc
+**/dist
+**/build
+**/tsconfig.json
+**/.git*
+**/.env
+**/.env.*
