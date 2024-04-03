@@ -21,3 +21,11 @@ app.get("/ping", async (_req, res) => {
 app.listen(PORT, () => {
   console.log("Server is running on port", PORT);
 });
+
+const gracefulShutdown = () => {
+    console.log('Gracefully shutting down...');
+};
+
+process.on('SIGINT', gracefulShutdown);
+process.on('SIGTERM', gracefulShutdown);
+process.on('SIGUSR2', gracefulShutdown); // Sent by nodemon
