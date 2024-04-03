@@ -3,4 +3,5 @@
 **/misc
 **/.env
 **/.env.*
+**/postgres-data
 
