@@ -39,7 +39,8 @@ export const transactionsRecentList = async (req: Request, res: Response, next: 
   }
 };
 
-app.get('/pong', transactionsRecentList);
+// app.get('/pong', transactionsRecentList);
+app.get('/api/v1/transactions/recent', transactionsRecentList);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
 app.use((err: any, req: Request, res: Response, next: (val?: any) => void) => {

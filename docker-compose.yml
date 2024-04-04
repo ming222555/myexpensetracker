@@ -22,10 +22,11 @@ services:
     networks:
       - app_network
 
-  app:
+  nodejs_app:
     build:
       context: .
       dockerfile: express-typescript/Dockerfile.dev
+    hostname: nodejs_app_host
     depends_on:
       - postgres
     # environment keys below are read by application code of container
@@ -46,7 +47,18 @@ services:
     networks:
       - app_network
 
+  nginx:
+    image: nginx:1.18.0-alpine
+    ports:
+      - "8088:80"
+    volumes:
+      - ./nginx/localhost.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/html:/var/www/html
+    depends_on:
+      - nodejs_app
+    networks:
+      - app_network
+
 networks:
   app_network:
     driver: bridge
-
