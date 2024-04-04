@@ -13,17 +13,20 @@ const app: Application = express();
 
 app.get("/ping", async (_req, res) => {
   const greet: Greetings = {
-    message: 'hi there123pppq'
+    message: 'hi there123pppqoooooooo'
   }
   res.send(greet);
 });
 
 export const transactionsRecentList = async (req: Request, res: Response, next: (val?: string) => void) => {
+  // const SELECT_COLUMNS = `SELECT 
+  //   e.id, e.cashflow, c.label as category, e.paymentmode, e.amount, e."expenseDate", e.note 
+  //   FROM expenses e 
+  //   LEFT JOIN categories c 
+  //   ON e.category = c.name `;
   const SELECT_COLUMNS = `SELECT 
-    e.id, e.cashflow, c.label as category, e.paymentmode, e.amount, e."expenseDate", e.note 
-    FROM expenses e 
-    LEFT JOIN categories c 
-    ON e.category = c.name `;
+    e.id, e.cashflow, e.category, e.paymentmode, e.amount, e."expenseDate", e.note 
+    FROM expenses e `;
 
   let strSELECT = SELECT_COLUMNS + ' ORDER BY "expenseDate" DESC, id DESC LIMIT 5';
 
