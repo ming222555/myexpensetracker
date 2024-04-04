@@ -9,13 +9,6 @@
     "start": "dotenv -e .env.production -- node dist/express-typescript/src/index.js",
     "clean": "rm -rf ./dist"
   },
-  "nodemonConfig": {
-    "watch": [
-      "src"
-    ],
-    "ext": "ts",
-    "exec": "ts-node src/index.ts"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
