@@ -16,7 +16,8 @@ services:
       # copy the sql script to create tables
       - ./postgresql/sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
       # copy the sql script to fill tables
-      - ./postgresql/sql/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
+      - ./postgresql/sql/fill_lookup_tables.sql:/docker-entrypoint-initdb.d/fill_lookup_tables.sql
+      - ./postgresql/sql/fill_nonlookup_tables.sql:/docker-entrypoint-initdb.d/fill_nonlookup_tables.sql
       # persist tables in container to local disk
       - ./postgresql/postgres-data:/var/lib/postgresql/data
     networks:
@@ -34,6 +35,7 @@ services:
     #   console.log('PORT',process.env.PORT)
     #   will show 8081
     environment:
+      - NODE_ENV=development
       - PORT=8081
       - PGUSER=postgres
       - PGHOST=postgres
