@@ -34,23 +34,35 @@ Stops running the containers.
 
 Stops running the containers and thereafer remove them.
 
-## More on myexpensetracker webapp
+## About myexpensetracker webapp
 
 Webapp is responsive.\
-Try resizing your browser to smaller dimension, and notice appearance of sidebar(s) at mobile/tablet browser width.
+Resize your browser to smaller dimension; notice appearance of sidebar(s) at mobile/tablet browser width.
+
+Besides viewing, transactions can be created, updated, deleted using [New], [Edit], [Delete] buttons provided.
+
+Inspiration comes from this [site](https://ej2.syncfusion.com/showcase/typescript/expensetracker/?_gl=1*1cnpsto*_ga*NzY4MjEzNDg4LjE2MTg4ODEyMzE.*_ga_WC4JKKPHH0*MTYxODg4MTIzMC4xLjEuMTYxODg4MTQxNi4w#/expense)
 
 Following are used to create webapp ...
-- react v18
-- reduxjs/toolkit v2
-- react-redux v9
-- @tanstack/react-query v5
+- Html5, semantic html
+- css, sass, bootstrap scss, BEM notation for css classes, css modules, responsive layouts
+-
+- react v18 <sub><i>(useState, useRef, useEffect, useMemo, memo, useReducer, forwardRef, ReactDOM.createPortal, etc...)</i></sub>
 - react-router-dom v6
+-
+- reduxjs/toolkit v2
+- react-redux v9 <sub>(_useDispatch, useSelector, etc..._)</sub>
+-
+- @tanstack/react-query v5 <sub>(_used in webapp version where database is postgres running at remote server or docker container_)</sub>
+-
 - es6
 - async code e.g. async/await, promise
 - typescript v4
+-
 - useDebounce hook from npm rooks
-- indexdb wrapper from npm localforage ([webapp version where database used is the indexdb of browser](http://myexpensetracker2.s3-website-ap-southeast-1.amazonaws.com/))
-- axios (webapp version where database used is postgres running at remote server or docker container)
+- indexdb wrapper from npm localforage <sub>([_used in webapp version where database is the indexdb of browser_](http://myexpensetracker2.s3-website-ap-southeast-1.amazonaws.com/))</sub>
+- axios <sub>(_used in webapp version where database is postgres running at remote server or docker container_)</sub>
+-
 - bootstrap v5
 - chart.js v4
 - chartjs-plugin-datalabels v2
@@ -58,4 +70,3 @@ Following are used to create webapp ...
 - react-chartjs-2 v5
 - react-datepicker v6
 - react-paginate v8
-- css, sass, bootstrap scss, BEM notation for css classes, css modules, responsive layouts
