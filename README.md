@@ -53,7 +53,7 @@ Following are used to create webapp ...
 - reduxjs/toolkit v2
 - react-redux v9 <sub>(_useDispatch, useSelector, etc..._)</sub>
 -
-- @tanstack/react-query v5 <sub>(_used in webapp version where database is postgres running at remote server or docker container_)</sub>
+- @tanstack/react-query v5
 -
 - es6
 - async code e.g. async/await, promise

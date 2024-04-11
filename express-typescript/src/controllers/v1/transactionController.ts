@@ -415,22 +415,14 @@ export const transactionsList = async (req: Request, res: Response, next: (val?:
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const createTransaction = async (req: Request, res: Response, next: (val?: any) => void) => {
-  const {
-    cashflow: bodycashflow,
-    category: bodycategory,
-    paymentmode: bodypaymentmode,
-    amount: bodyamount,
-    expenseDate: bodyexpenseDate,
-    note: bodynote,
-  } = req.body;
 
-  const cashflow = bodycashflow ? bodycashflow : '';
-  const category = bodycategory ? bodycategory : '';
-  const paymentmode = bodypaymentmode ? bodypaymentmode : '';
-  const amount = bodyamount ? bodyamount : '';
-  const expenseDate = bodyexpenseDate ? bodyexpenseDate : '';
-  const note = bodynote ? bodynote : '';
-
+  const cashflow = req.body.cashflow??'';
+  const category = req.body.category??'';
+  const paymentmode = req.body.paymentmode??'';
+  const amount = req.body.amount??'';
+  const expenseDate = req.body.expenseDate??'';
+  const note = req.body.note??'';
+  
   const nbrAmount = parseFloat(amount);
   if (isNaN(nbrAmount)) {
     next({ statusCode: 400, message: 'Amount must be numeric' });
@@ -478,21 +470,12 @@ export const updateTransaction = async (req: Request, res: Response, next: (val?
     return;
   }
 
-  const {
-    cashflow: bodycashflow,
-    category: bodycategory,
-    paymentmode: bodypaymentmode,
-    amount: bodyamount,
-    expenseDate: bodyexpenseDate,
-    note: bodynote,
-  } = req.body;
-
-  const cashflow = bodycashflow ? bodycashflow : '';
-  const category = bodycategory ? bodycategory : '';
-  const paymentmode = bodypaymentmode ? bodypaymentmode : '';
-  const amount = bodyamount ? bodyamount : '';
-  const expenseDate = bodyexpenseDate ? bodyexpenseDate : '';
-  const note = bodynote ? bodynote : '';
+  const cashflow = req.body.cashflow??'';
+  const category = req.body.category??'';
+  const paymentmode = req.body.paymentmode??'';
+  const amount = req.body.amount??'';
+  const expenseDate = req.body.expenseDate??'';
+  const note = req.body.note??'';
 
   const nbrAmount = parseFloat(amount);
   if (isNaN(nbrAmount)) {
